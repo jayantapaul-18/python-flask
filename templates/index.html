@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#000000">
+    <title>Dynamic Monitoring Service</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type=text/javascript src="{{url_for('static', filename='client.js') }}"></script>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+    <title>App</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">BRASS Status</a>
+        </div>
+        <div>
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="#">API-Health</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav">
+            <li class="Link">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a href="#">Alert</a>
+                </li>
+                <li>
+                  <a href="">Issue</a>
+                </li>
+                <li>
+                  <a href="#">Slack</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="https://hghtg">PROD</a>
+                </li>
+                <li role="separator" class="divider"></li>
+                <li>
+                  <a href="#">Deployment</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">Login <span class="glyphicon glyphicon-log-in"></span>
+              </a>
+              <div class="dropdown-menu">
+                <form id="formLogin" class="form container-fluid" action="http://localhost:3018/dms/v1/status" method="POST">
+                  <div class="form-group">
+                    <label for="usr">Name:</label>
+                    <input type="text" class="form-control" id="usr">
+                  </div>
+                  <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" class="form-control" id="pwd">
+                  </div>
+                  <input type="submit" class="btn btn-block" value="Login">
+                </form>
+                <div class="container-fluid">
+                  <br>
+                  <a class="small" href="#">Forgot password?</a>
+                  <a class="small" href="#">Create account?</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="panel panel-default"></div>
+      <table class="table">
+        <thead class="thead-default">
+          <tr>
+            <th>#</th>
+            <th>Microservice</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <a class="btn btn-default dropdown-toggle" test()>TEST <span class="badge"> 4</span>
+              </a>
+            </td>
+            <td>
+              <strong>#{TEST}</strong>
+            </td>
+          </tr>
+          <tr>
+          <tr>
+            <th scope="row">1</th>
+            <td>
+              <a class="btn btn-default dropdown-toggle" href="http://localhost:5000/app/healthcheck">Healthcheck <span class="badge"> 1</span>
+              </a>
+            </td>
+            <td>
+              <strong>#Healthcheck}</strong>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </body>
+</html>

@@ -72,6 +72,11 @@ def healthcheck():
 def index():
     return 'ACK from Python Server'
 
+# Creating Web App
+@app.route('/home')
+def home():
+    return render_template('index.html')
+
 
 print('Python Server Started ...')
 

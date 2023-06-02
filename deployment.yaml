@@ -6,11 +6,10 @@ spec:
   selector:
     app: python-flask
   ports:
-  - protocol: "TCP"
-    port: 5001
-    targetPort: 5000
+    - protocol: "TCP"
+      port: 5001
+      targetPort: 5000
   type: LoadBalancer
-
 
 ---
 apiVersion: apps/v1beta1
@@ -25,8 +24,8 @@ spec:
         app: python-flask
     spec:
       containers:
-      - name: python-flask
-        image: python-flask:latest
-        imagePullPolicy: Never
-        ports:
-        - containerPort: 5000
+        - name: python-flask
+          image: python-flask:latest
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 5000

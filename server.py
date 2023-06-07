@@ -10,6 +10,7 @@ import json
 import logging
 import logging.config
 import logging.handlers
+import requests
 
 app = Flask(__name__)
 
@@ -51,12 +52,12 @@ logger.critical("critical message")
 # Creating the security route
 
 
-@app.route("/")
+@app.route("/api-request")
 def sectes():
-    print("Start Security Scan check...")
-    logger.error("Start Security Scan check")
-    logger.debug("Start Security Scan check")
-    return "Security Scan Compleated"
+    api_url = "https://jsonplaceholder.typicode.com/todos/1"
+    response = requests.get(api_url)
+    logger.debug("making api request")
+    return response.json()
 
 
 # Creating the route for ping

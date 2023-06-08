@@ -52,5 +52,7 @@ git status
 pre-commit run --all-files
 cz c
 git commit -m 'feat: health check api with backend api status response'
+cz bump --check-consistency --changelog
+git push --tags origin feature/new-api-update
 git push origin main --force
 ```

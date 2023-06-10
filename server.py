@@ -85,6 +85,33 @@ def home():
     return render_template("index.html")
 
 
+
+
+def calculate_auto_future_date(expiration_date):
+  """
+  Calculates the auto future date for token rotation.
+
+  Args:
+    expiration_date (datetime): The expiration date of the token.
+
+  Returns:
+    datetime: The auto future date.
+  """
+  # Get the current date.
+  current_date = datetime.datetime.now()
+  # Calculate the future date.
+  future_date = expiration_date - datetime.timedelta(days=1)
+  # Check if the future date is before the current date.
+  if future_date < current_date:
+    # If the future date is before the current date, then set it to the next month.
+    future_date = current_date + datetime.timedelta(days=30)
+    
+  return future_date
+
+expiration_date = datetime.datetime(2023, 6, 10)
+future_date = calculate_auto_future_date(expiration_date)
+print(future_date)
+
 print("Python Server Started ...")
 
 # Server Run

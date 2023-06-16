@@ -84,7 +84,9 @@ def index():
 def home():
     return render_template("index.html")
 
-
+@app.route("/app/v1/healthz")
+def healthcheck():
+    return {"Status": "Server Up & running"}
 
 
 def calculate_auto_future_date(expiration_date):
